@@ -624,6 +624,7 @@ MonoBehaviour:
   player2Score: 0
   player1ScoreText: {fileID: 2122649940}
   player2ScoreText: {fileID: 1414467333}
+  pvp: 0
 --- !u!4 &581058903
 Transform:
   m_ObjectHideFlags: 0
@@ -910,6 +911,7 @@ GameObject:
   - component: {fileID: 1014183202}
   - component: {fileID: 1014183201}
   - component: {fileID: 1014183205}
+  - component: {fileID: 1014183206}
   m_Layer: 0
   m_Name: PlayerDer
   m_TagString: Untagged
@@ -1063,7 +1065,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014183200}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 686c29ce3dde8044e8c903424df5a770, type: 3}
   m_Name: 
@@ -1071,6 +1073,20 @@ MonoBehaviour:
   player1: 0
   speed: 3
   rb: {fileID: 1014183201}
+--- !u!114 &1014183206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014183200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c707a0c7a4e25e419c13ed4f3f25c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  ball: {fileID: 418499772}
 --- !u!1 &1308923948
 GameObject:
   m_ObjectHideFlags: 0

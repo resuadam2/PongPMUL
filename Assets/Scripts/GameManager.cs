@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public int player1Score, player2Score; // These are set in the inspector
     public TMPro.TextMeshProUGUI player1ScoreText, player2ScoreText; // These are set in the inspector
 
+    public bool pvp; 
+
     // This method is called when the ball enters the goal area (the trigger collider)
     public void GoalScored(int playerNumber)
     {
@@ -29,7 +31,10 @@ public class GameManager : MonoBehaviour
     {
         ball.GetComponent<Ball>().Reset();
         player1.GetComponent<Players>().Reset();
-        player2.GetComponent<Players>().Reset();
+        if (pvp)
+        {
+            player2.GetComponent<Players>().Reset();
+        }
     }
 
 }

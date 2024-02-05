@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PVP.unity
     guid: 9283ddd16adcd6546852b1dccd0f604f
+  - enabled: 1
+    path: Assets/Scenes/Winner.unity
+    guid: d7012b27d123bfe41a0249234d21505c
   m_configObjects: {}

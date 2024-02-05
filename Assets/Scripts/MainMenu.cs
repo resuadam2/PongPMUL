@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    void Update()
+    {
+        // If the player presses the escape key
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Quit the game
+            Debug.Log("Quitting game");
+            Application.Quit();
+        }
+    }
+
     public void PlayerCPU()
     {
         // Load the CPU scene

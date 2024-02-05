@@ -38,5 +38,26 @@ public class Ball : MonoBehaviour
         {
             rb.velocity *= 1 + speedIncrease;
         }
+        VelocityFix();
     }
+
+    private void VelocityFix()
+    {
+        float velocidadDelta = 0.5f; // Velocidad que queremos que aumente la bola
+        float velocidadMinima = 0.2f; // Velocidad mínima que queremos que tenga la bola
+
+        if (Mathf.Abs(rb.velocity.x) < velocidadMinima) // Si la velocidad de la bola en el eje x es menor que la mínima
+        {
+            velocidadDelta = Random.value < 0.5f ? velocidadDelta : -velocidadDelta; // Elegimos un valor aleatorio entre -0.5 y 0.5
+            rb.velocity = new Vector2(rb.velocity.x + velocidadDelta, rb.velocity.y); // Aumentamos la velocidad de la bola
+        }
+
+        if (Mathf.Abs(rb.velocity.y) < velocidadMinima) // Si la velocidad de la bola en el eje y es menor que la mínima
+        {
+            velocidadDelta = Random.value < 0.5f ? velocidadDelta : -velocidadDelta; // Elegimos un valor aleatorio entre -0.5 y 0.5
+            // Otra forma de aumentar la velocidad (esta vez en el eje y)
+            rb.velocity += new Vector2(0f, velocidadDelta); // Aumentamos la velocidad de la bola
+        }
+    }
+
 }

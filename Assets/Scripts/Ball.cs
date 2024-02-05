@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
     public float speed = 3f; // This is set in the inspector
     public Rigidbody2D rb; // This is set in the inspector
     private Vector2 startPos; // This is set in the inspector
+    public float speedIncrease = 0.1f; // This is set in the inspector
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +30,13 @@ public class Ball : MonoBehaviour
         rb.velocity = Vector2.zero;
         transform.position = startPos;
         Launch();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            rb.velocity *= 1 + speedIncrease;
+        }
     }
 }
